@@ -1,0 +1,1 @@
+import {api} from './client.js';export const bookingApi={create:data=>api('/bookings',{method:'POST',body:JSON.stringify(data)}),vnpayReturn:params=>api('/payments/vnpay-return?'+new URLSearchParams(params))};
