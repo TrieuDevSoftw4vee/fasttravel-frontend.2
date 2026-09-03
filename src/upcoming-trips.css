@@ -1,0 +1,7 @@
+.upcoming-section{padding:38px 20px 10px}
+.upcoming-section .deal-title{margin-bottom:16px}
+.upcoming-section .deal-title h2{margin-bottom:5px}
+.upcoming-section .deal-title p{font-size:11px;color:var(--muted);margin:0}
+.upcoming-list{display:grid;gap:12px}
+.upcoming-empty{border:1px dashed var(--stroke);border-radius:8px;background:#fafcff}
+@media(max-width:800px){.upcoming-section{padding:28px 0 0}}
