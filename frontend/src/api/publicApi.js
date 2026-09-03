@@ -1,0 +1,1 @@
+import {api} from './client.js';export const publicApi={stations:()=>api('/public/stations'),trips:params=>api('/public/trips?'+new URLSearchParams(Object.entries(params).filter(([,v])=>v))),trip:id=>api('/public/trips/'+id),seats:id=>api('/public/trips/'+id+'/seats')};

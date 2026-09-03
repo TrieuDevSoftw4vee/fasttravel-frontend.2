@@ -1,0 +1,12 @@
+import { createRouter, createWebHistory } from 'vue-router';
+import MainLayout from '../layouts/MainLayout.vue';
+import HomePage from '../pages/user/HomePage.vue';
+import BookingPage from '../pages/user/BookingPage.vue';
+import AccountPage from '../pages/user/AccountPage.vue';
+import PaymentResultPage from '../pages/user/PaymentResultPage.vue';
+import AuthPage from '../pages/auth/AuthPage.vue';
+const routes=[{path:'/',component:MainLayout,children:[{path:'',name:'home',component:HomePage},{path:'auth',name:'auth',component:AuthPage},{path:'booking/:tripId',name:'booking',component:BookingPage,props:true},{path:'account',name:'account',component:AccountPage,meta:{auth:true}},{path:'payment-result',name:'payment-result',component:PaymentResultPage}]},{path:'/:pathMatch(.*)*',redirect:'/'}];
+const router=createRouter({history:createWebHistory(),routes});
+router.beforeEach(to=>{const user=JSON.parse(localStorage.getItem('ft_user')||'null'),token=localStorage.getItem('ft_token');if(to.meta.auth&&(!user||!token))return{name:'auth',query:{redirect:to.fullPath}};});
+window.addEventListener('fasttravel:session-expired',()=>router.replace({name:'auth',query:{redirect:router.currentRoute.value.fullPath,expired:'1'}}));
+export default router;

@@ -1,0 +1,1 @@
+<template><footer><div class="footer-grid"><div><h3>FASTTRAVEL</h3><p>Đặt vé xe khách nhanh chóng, chọn ghế và thanh toán VNPay.</p></div><div><b>Chức năng</b><p>Tìm chuyến • Chọn ghế • Đặt vé • Thanh toán VNPay</p></div><div><b>Tài khoản</b><p>Xem lịch sử đặt vé sau khi đăng nhập.</p></div></div><small>© 2026 FastTravel.</small></footer></template>
