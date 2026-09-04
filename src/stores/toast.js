@@ -1,0 +1,1 @@
+import {ref} from 'vue';const message=ref('');let timer;export function useToast(){function show(text){message.value=text;clearTimeout(timer);timer=setTimeout(()=>message.value='',4500);}return{message,show};}
